@@ -8,7 +8,7 @@ from urllib.request import urlopen
 seo={}
 string=''
 
-#############################web crawler#########################
+#############################   web crawler   #########################
 
 def spider (url):
     header=[]
@@ -34,7 +34,7 @@ def spider (url):
             normal.append(word)
     filtr(header,normal)
 		
-##############################online content extractor###################
+##############################   online content extractor   ###################
 
 def spider2 (url):
     header=[]
@@ -50,7 +50,7 @@ def spider2 (url):
     filtr(header,normal)
         
 
-##############################filter for words##############################    
+##############################   filter for words   ##############################    
     
 def filtr (head,norml):
     header=[]
@@ -82,7 +82,7 @@ def filtr (head,norml):
                 header.append(word)
     Seo(header,normal)                       #calling Seo function
     
-##########################Seo function#########################    
+##########################   Seo function   #########################    
     
 def Seo (header,normal):
     i=0
@@ -121,7 +121,7 @@ def Seo (header,normal):
     lbl.pack()
     mainloop()  # running the nwe aplet window
         
-#################################application main body#########################
+#################################   application main body   #########################
 
 app=tk.Tk()
 app.configure(background='white')
