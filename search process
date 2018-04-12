@@ -1,0 +1,22 @@
+import requests
+from bs4 import BeautifulSoup
+
+def spider(url,search_key):
+	flag=0
+	conection=requests.get(url)
+	txt=conection.text
+	soup=BeautifulSoup(txt)
+	print("search results:")
+	for link in soup.findAll('a'):
+		title=link.string
+		if title == search_key:
+			print("found :" + search_key)
+			hef=url+str(link.get('href'))
+			print("domain is: "+hef)
+			flag=1
+	if flag == 0:
+		print("Nothing Found with "+search_key+" try using another word!")
+
+url=str(input("enter url: "))
+key=str(input("what you want to search on this domain"))
+spider(url,key)
