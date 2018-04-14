@@ -102,7 +102,10 @@ def Seo (header,normal):
     for key, value in sorted(seo.items(), key=operator.itemgetter(1)): #filter for small words
         if value != '1' or value !='2':
             x.append(key)
-    y=x[::-1]
+    if len(header) == 0:	
+    	y=x
+    else:
+	y=x[::-1]
     print(y) #check function ### to be removed###
     for i in range(len(y)):
         Label(root, text = y[i]).grid(row=i,ipadx = 10,ipady = 50)
